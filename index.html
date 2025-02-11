@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal</title>
+  <style>
+    body {
+      background-color: lightpink;
+    }
+    h1 {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px;
+    }
+    img{
+      border-radius: 10px;
+      position:fixed; 
+      top:100px; 
+      right:525px;
+      width:400px;
+    }
+    .buttons-container button {
+      background-color: black;
+      color: lightpink;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      top: 600px;
+      left: 575px;
+    }
+    #gif-container {
+      margin-top: 20px;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my valentine's?</h1>
+  <img src="cat_1.jpg">
+  <div class="buttons-container">
+    <button id="yes-button">Yes</button>
+    <button id="maybe-button">Maybe</button>
+    <button id="no-button">No</button>
+  </div>
+  <script>
+
+    document.getElementById('yes-button').addEventListener('click', function() {
+      window.location.href = "https://www.youtube.com/watch?v=4R20vw17xLI&ab_channel=GalaxyWolves804";
+    });
+
+    // Select the "No" button by its ID.
+    const noButton = document.getElementById('no-button');
+
+    noButton.addEventListener('click', function() {
+      // Get the dimensions of the viewport.
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      
+      // Get the button's dimensions.
+      const buttonWidth = noButton.offsetWidth;
+      const buttonHeight = noButton.offsetHeight;
+      
+      // Calculate random positions ensuring the button stays fully visible.
+      const randomLeft = Math.random() * (viewportWidth - buttonWidth);
+      const randomTop = Math.random() * (viewportHeight - buttonHeight);
+      
+      // Change the button's position to fixed so it can move anywhere on the viewport.
+      noButton.style.position = 'fixed';
+      noButton.style.left = randomLeft + 'px';
+      noButton.style.top = randomTop + 'px';
+    });
+
+    document.getElementById('maybe-button').addEventListener('click', function() {
+      window.location.href = 'maybe.html';
+    });
+  </script>
+</body>
+</html>

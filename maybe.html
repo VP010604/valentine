@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maybe</title>
+  <style>
+    /* Full-page black background with centered content */
+    body {
+      background-color: black;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Ensure the GIF scales nicely */
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- The GIF will be displayed inside this image element -->
+  <img id="gif" src="" alt="Random GIF" />
+
+  <script>
+    // List of 5 local GIF file names.
+    const gifs = [
+      'gif1.gif',
+      'gif2.gif',
+      'gif3.gif'
+    ];
+
+    // Randomly choose one of the GIFs.
+    const randomIndex = Math.floor(Math.random() * gifs.length);
+    const chosenGif = gifs[randomIndex];
+
+    // Set the source of the image to the chosen GIF.
+    document.getElementById('gif').src = chosenGif;
+  </script>
+</body>
+</html>
